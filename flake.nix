@@ -6,9 +6,14 @@
   };
 
   outputs = { self, nixpkgs, flake-utils }: {
-    overlay = self: super: 
-    {
-      coq-ordinal = callPackage ./coq-ordinal { };
+    overlay = self: super: {
+      mkCoqPackages = coq:
+        let
+          callPackage = super.lib.callPackageWith (super // set);
+          set = super.mkCoqPackages coq // rec {
+            coq-ordinal = callPackage ./coq-ordinal { };
+          };
+        in super.lib.attrValues set;
     };
   };
 }
