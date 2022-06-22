@@ -13,7 +13,7 @@
           set = super.mkCoqPackages coq // rec {
             coq-ordinal = callPackage ./coq-ordinal { };
           };
-        in super.lib.attrValues set;
+        in set;
     };
   };
 }
