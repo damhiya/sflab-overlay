@@ -13,6 +13,7 @@
             callPackage = super.lib.callPackageWith (super // set);
             set = super.mkCoqPackages coq // rec {
               coq-ordinal = callPackage ./coq-ordinal { };
+              coq-sflib = callPackage ./coq-sflib { };
             };
           in set;
       };
@@ -24,7 +25,8 @@
         };
       in {
         devShell = pkgs.mkShell {
-          buildInputs = [ (pkgs.mkCoqPackages pkgs.coq_8_15).coq-ordinal ];
+          buildInputs = with (pkgs.mkCoqPackages pkgs.coq_8_15);
+            [ coq-ordinal coq-sflib ];
         };
       }) // {
         overlays.default = overlay;
