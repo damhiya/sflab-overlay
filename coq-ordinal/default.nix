@@ -1,12 +1,12 @@
 { stdenv, fetchFromGitHub, coq }:
 stdenv.mkDerivation {
   pname = "coq${coq.coq-version}-ordinal";
-  version = "0.5.0";
+  version = "dev";
   src = fetchFromGitHub {
     owner = "minkiminki";
     repo = "Ordinal";
-    rev = "7d82d73db3fa248d4d19686fc2eff9836f684302";
-    sha256 = "Jq0LnR7TgRVcPqh8Ha6tIIK3KfRUgmzA9EhxeySgPnM=";
+    rev = "400831ee977ede030ddf35bf52f1e90418ddf52e";
+    sha256 = "sha256-jf16EyLAnKm+42K+gTTHVFJqeOVQfIY2ozbxIs5x5DE=";
   };
   buildInputs = [ coq ];
   installPhase = ''
