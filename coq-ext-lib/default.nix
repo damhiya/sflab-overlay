@@ -1,14 +1,9 @@
-{ stdenv, fetchFromGitHub, coq }:
+{ stdenv, fetchFromGitHub, coq, coq-ext-lib-src }:
 stdenv.mkDerivation {
   pname = "coq${coq.coq-version}-coq-ext-lib";
-  version = "dev";
-  src = fetchFromGitHub {
-    owner = "snu-sf";
-    repo = "coq-ext-lib";
-    rev = "968fb49a1f1044adf87f8e427cbe2d83d525d37d";
-    sha256 = "sha256-tgnktKgP7sx1mkh1QTjtamQCIt1L374Fdt7YYYB2+AE=";
-  };
-  buildInputs = [ coq ];
+  version = coq-ext-lib-src.rev;
+  src = coq-ext-lib-src;
+  nativeBuildInputs = [ coq ];
   buildPhase = ''
     make theories
   '';

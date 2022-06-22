@@ -1,5 +1,22 @@
 {
   "nodes": {
+    "coq-ext-lib-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1649233541,
+        "narHash": "sha256-OTwR8QFG7whu4wIO03rwgvrlRgP7KOA83Y8zw1trUSM=",
+        "owner": "snu-sf",
+        "repo": "coq-ext-lib",
+        "rev": "5a9ba6ba4ad011a8aee2435359d989d7d372ceeb",
+        "type": "github"
+      },
+      "original": {
+        "owner": "snu-sf",
+        "ref": "poly",
+        "repo": "coq-ext-lib",
+        "type": "github"
+      }
+    },
     "flake-utils": {
       "locked": {
         "lastModified": 1653893745,
@@ -12,6 +29,23 @@
       "original": {
         "owner": "numtide",
         "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "itree-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1615825086,
+        "narHash": "sha256-VcuIBDjNIeEqFLevhPKrtx45DYLsBdwhEcxrRJuFuUA=",
+        "owner": "DeepSpec",
+        "repo": "InteractionTrees",
+        "rev": "7095b0fb0e1371a233c54ec5b3b6a0118ec65d07",
+        "type": "github"
+      },
+      "original": {
+        "owner": "DeepSpec",
+        "ref": "4.0.0",
+        "repo": "InteractionTrees",
         "type": "github"
       }
     },
@@ -31,10 +65,48 @@
         "type": "github"
       }
     },
+    "ordinal-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1648429484,
+        "narHash": "sha256-jf16EyLAnKm+42K+gTTHVFJqeOVQfIY2ozbxIs5x5DE=",
+        "owner": "minkiminki",
+        "repo": "Ordinal",
+        "rev": "400831ee977ede030ddf35bf52f1e90418ddf52e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "minkiminki",
+        "ref": "main",
+        "repo": "Ordinal",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
+        "coq-ext-lib-src": "coq-ext-lib-src",
         "flake-utils": "flake-utils",
-        "nixpkgs": "nixpkgs"
+        "itree-src": "itree-src",
+        "nixpkgs": "nixpkgs",
+        "ordinal-src": "ordinal-src",
+        "sflib-src": "sflib-src"
+      }
+    },
+    "sflib-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1646379221,
+        "narHash": "sha256-S0b5YxTu5uJaLIntkioxdqVjDbimupw5/pyIV+Z6M7M=",
+        "owner": "snu-sf",
+        "repo": "sflib",
+        "rev": "2203ecc62fef14c2204f10329f2cc85f5bc4f108",
+        "type": "github"
+      },
+      "original": {
+        "owner": "snu-sf",
+        "ref": "master",
+        "repo": "sflib",
+        "type": "github"
       }
     }
   },
