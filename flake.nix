@@ -14,6 +14,8 @@
             set = super.mkCoqPackages coq // rec {
               coq-ordinal = callPackage ./coq-ordinal { };
               coq-sflib = callPackage ./coq-sflib { };
+              coq-ext-lib = callPackage ./coq-ext-lib { };
+              coq-itree = callPackage ./coq-itree { };
             };
           in set;
       };
@@ -25,8 +27,12 @@
         };
       in {
         devShell = pkgs.mkShell {
-          buildInputs = with (pkgs.mkCoqPackages pkgs.coq_8_15);
-            [ coq-ordinal coq-sflib ];
+          buildInputs = with (pkgs.mkCoqPackages pkgs.coq_8_15); [
+            coq-ordinal
+            coq-sflib
+            coq-ext-lib
+            coq-itree
+          ];
         };
       }) // {
         overlays.default = overlay;
