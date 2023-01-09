@@ -68,11 +68,11 @@
     "ordinal-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1648429484,
-        "narHash": "sha256-jf16EyLAnKm+42K+gTTHVFJqeOVQfIY2ozbxIs5x5DE=",
+        "lastModified": 1667270711,
+        "narHash": "sha256-26iN/hRaMmzCu3fYSUyPf37TUbsNNR2ZKb3n+N53SwE=",
         "owner": "minkiminki",
         "repo": "Ordinal",
-        "rev": "400831ee977ede030ddf35bf52f1e90418ddf52e",
+        "rev": "225f2f2b18ec8d65a637d964839528eeeb1829ce",
         "type": "github"
       },
       "original": {
