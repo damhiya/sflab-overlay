@@ -82,6 +82,23 @@
         "type": "github"
       }
     },
+    "promising-lib-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1662340093,
+        "narHash": "sha256-dxUCdLJFwkF+8YtPQjIynRcsFm3hCFPYEKDCp1Peeg0=",
+        "owner": "snu-sf",
+        "repo": "promising-lib",
+        "rev": "2d00a7e78fc1aacb1c68c636550764cc04214ce9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "snu-sf",
+        "ref": "8.15",
+        "repo": "promising-lib",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "coq-ext-lib-src": "coq-ext-lib-src",
@@ -89,6 +106,7 @@
         "itree-src": "itree-src",
         "nixpkgs": "nixpkgs",
         "ordinal-src": "ordinal-src",
+        "promising-lib-src": "promising-lib-src",
         "sflib-src": "sflib-src"
       }
     },

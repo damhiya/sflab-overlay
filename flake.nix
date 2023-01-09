@@ -15,9 +15,12 @@
 
     itree-src.url = "github:DeepSpec/InteractionTrees/4.0.0";
     itree-src.flake = false;
+
+    promising-lib-src.url = "github:snu-sf/promising-lib/8.15";
+    promising-lib-src.flake = false;
   };
 
-  outputs = { self, nixpkgs, flake-utils, coq-ext-lib-src, ordinal-src, sflib-src, itree-src }:
+  outputs = { self, nixpkgs, flake-utils, coq-ext-lib-src, ordinal-src, sflib-src, itree-src, promising-lib-src }:
     let
       overlay = self: super: {
         mkCoqPackages = coq:
@@ -28,6 +31,7 @@
               sflib = callPackage ./sflib { inherit sflib-src; };
               coq-ext-lib = callPackage ./coq-ext-lib { inherit coq-ext-lib-src; };
               itree = callPackage ./itree { inherit itree-src; };
+              promising-lib = callPackage ./promising-lib { inherit promising-lib-src; };
             };
           in set;
       };
@@ -40,10 +44,12 @@
       in {
         devShell = pkgs.mkShell {
           buildInputs = with (pkgs.mkCoqPackages pkgs.coq_8_15); [
+            coq
             ordinal
             sflib
             coq-ext-lib
             itree
+            promising-lib
           ];
         };
       }) // {
