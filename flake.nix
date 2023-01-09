@@ -18,9 +18,13 @@
 
     promising-lib-src.url = "github:snu-sf/promising-lib/8.15";
     promising-lib-src.flake = false;
+
+    promising-seq-src.url = "github:snu-sf/promising-seq-coq/main";
+    promising-seq-src.flake = false;
   };
 
-  outputs = { self, nixpkgs, flake-utils, coq-ext-lib-src, ordinal-src, sflib-src, itree-src, promising-lib-src }:
+  outputs = { self, nixpkgs, flake-utils, coq-ext-lib-src, ordinal-src
+    , sflib-src, itree-src, promising-lib-src, promising-seq-src }:
     let
       overlay = self: super: {
         mkCoqPackages = coq:
@@ -32,6 +36,7 @@
               coq-ext-lib = callPackage ./coq-ext-lib { inherit coq-ext-lib-src; };
               itree = callPackage ./itree { inherit itree-src; };
               promising-lib = callPackage ./promising-lib { inherit promising-lib-src; };
+              promising-seq = callPackage ./promising-seq { inherit promising-seq-src; };
             };
           in set;
       };
@@ -50,6 +55,7 @@
             coq-ext-lib
             itree
             promising-lib
+            promising-seq
           ];
         };
       }) // {

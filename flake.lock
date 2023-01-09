@@ -99,6 +99,23 @@
         "type": "github"
       }
     },
+    "promising-seq-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1667813823,
+        "narHash": "sha256-kt+xE0G0SLQt4X1uKuODPaPZfBE/RYQkkuTT85i/cYE=",
+        "owner": "snu-sf",
+        "repo": "promising-seq-coq",
+        "rev": "4c962f1810d6a55b19d13b1350e18c80113b146d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "snu-sf",
+        "ref": "main",
+        "repo": "promising-seq-coq",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "coq-ext-lib-src": "coq-ext-lib-src",
@@ -107,6 +124,7 @@
         "nixpkgs": "nixpkgs",
         "ordinal-src": "ordinal-src",
         "promising-lib-src": "promising-lib-src",
+        "promising-seq-src": "promising-seq-src",
         "sflib-src": "sflib-src"
       }
     },
