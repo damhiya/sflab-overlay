@@ -7,7 +7,7 @@ stdenv.mkDerivation {
   buildInputs = [ coq-ext-lib sflib paco itree promising-lib ];
   phases = [ "unpackPhase" "buildPhase" "installPhase" ];
   buildPhase = ''
-    make build -j20
+    make build -j$NIX_BUILD_CORES
   '';
   installPhase = ''
     make -f Makefile.coq COQMF_COQLIB=$out/lib/coq/${coq.coq-version}/ install
